@@ -5,9 +5,8 @@ metadata:
   namespace: chat-app
   labels:
     app: chatapp-ingress
-  annotations:
+  annotations: 
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
   - http:
@@ -16,14 +15,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: frontend
+            name: frontend-service
             port: 
               number: 80
-
-      - pathType: Prefix
-        path: "/api"
-        backend:
-          service:
-            name: backend
-            port: 
-              number: 5001
