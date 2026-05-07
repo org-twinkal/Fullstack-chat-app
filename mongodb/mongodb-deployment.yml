@@ -1,9 +1,10 @@
-kind: Deployment
+kind: StatefulSet
 apiVersion: apps/v1
 metadata:
   name: mongodb
 spec:
-  replicas: 1
+  ServiceName: mongodb-service
+  replicas: 3
   selector:
     matchLabels:
       app: mongodb
