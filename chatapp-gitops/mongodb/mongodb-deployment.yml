@@ -2,6 +2,8 @@ kind: StatefulSet
 apiVersion: apps/v1
 metadata:
   name: mongodb
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   ServiceName: mongodb-service
   replicas: 3
